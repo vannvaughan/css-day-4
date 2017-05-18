@@ -60,6 +60,7 @@ header {
   height: 15em;
   border: 1px solid #9aa;
   position: relative;
+  overflow: hidden;
 }
 
 header .slide {
@@ -304,5 +305,33 @@ main {
       opacity: 1;
       transform: rotate3d(0, 1, 0, 360deg)
    }
+}
+
+@media only screen and (max-width: 400px) {
+  .row {
+    flex-direction: column;
+  }
+
+  .secondary-logo {
+    display: none;
+  }
+
+  main {
+    padding: 0;
+  }
+
+}
+
+@media only screen and (min-width: 1200px) {
+  header {
+    width: 80;
+    max-width: 1000px;
+    margin: 0 auto;
+  }
+  .container {
+    width: 80%;
+    max-width: 1000px;
+    margin: 0 auto;
+  }
 }
 

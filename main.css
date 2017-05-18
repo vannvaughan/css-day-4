@@ -1,0 +1,308 @@
+* {
+   margin: 0;
+   padding: 0;
+   box-sizing: border-box;
+   color: #999;
+   --text-color: #eef;
+   --theme-color: #12BEE5;
+   --accent-color: #ff2e6e;
+   --tertiary-color: #ff8915; 
+}
+
+.container {
+  background: #333;
+  min-height: 100vh;
+}
+
+nav {
+  height: 3em;
+  /*padding: .75em;*/
+}
+
+nav ul {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  list-style-type: none;
+}
+
+nav ul li {
+  display: inline-block;
+  padding: 0 .5em;
+}
+
+nav ul li a {
+  font-family: 'Raleway', sans-serif;
+  color: var(--text-color);
+  text-decoration: none;
+}
+
+nav ul li a:hover {
+  color: #12BEE5;
+}
+
+.logo {
+  font-size: 2.75em;
+}
+.main-logo {
+  font-family: 'Raleway', sans-serif;
+  color: #eef;
+  position: relative;
+  top: 3px;
+}
+
+.secondary-logo {
+  font-family: 'Alex Brush', cursive;
+  color: var(--accent-color);
+}
+
+header {
+  height: 15em;
+  border: 1px solid #9aa;
+  position: relative;
+}
+
+header .slide {
+  position: absolute;
+  width: 100%;
+  height: 100%;
+}
+
+header .slide-one {
+  background: url("images/landscape.jpg") no-repeat center 75% / cover;
+  animation: slide-out 10s ease-in-out forwards 10s; 
+}
+
+header .slide-two {
+  left: 100%;
+  background: url("images/cherry.jpg") no-repeat center 75% / cover;
+  animation: slide 40s ease-in-out forwards 10s infinite;
+}
+
+header .slide-three {
+  left: 100%;
+  background: url("images/mountain.jpg") no-repeat center 75% / cover;
+  animation: slide 40s ease-in-out forwards 20s infinite;
+}
+
+header .slide-four {
+  left: 100%;
+  background: url("images/cactus.jpg") no-repeat center 75% / cover;
+  animation: slide 40s ease-in-out forwards 30s infinite;
+}
+
+header .slide-five {
+  left: 100%;
+  background: url("images/landscape.jpg") no-repeat center 75% / cover;
+  animation: slide 40s ease-in-out forwards 40s infinite;
+}
+
+main {
+  min-height: calc(100vh - 4.75em);
+  padding: .5em;
+}
+
+.row {
+  display: flex;
+  flex-wrap: wrap;
+}
+
+.flex-item {
+  display: flex;
+  flex: 1;
+  align-items: center;
+  justify-content: center;
+  background: #eee;
+  margin: .5em;
+  height: 10em;
+}
+
+.flex-item-title {
+  font-family: 'Raleway';
+  font-size: 2em;
+  color: #12BEE5;  
+}
+
+.flex-item:nth-child(even) {
+  background: #999;
+}
+.box {
+  border: .25em solid var(--accent-color);
+  padding: 1em;
+  animation: border-appear 10s ease-in-out 0s infinite;
+}
+/*.box h2{
+  font-family: 'Raleway';
+  font-size: 2em;
+  color: #12BEE5;
+}*/
+.flexbox {
+  flex: 2;
+}
+
+.flexbox-container {
+  display: flex;
+  justify-content: space-around;
+  animation: stretch 4s linear infinite;
+}
+
+.flexbox-container h5 {
+  color: #ff8915;
+}
+
+.reset span{
+  font-family: monospace;
+  font-size: 3em;
+  color: var(--accent-color);  
+}
+
+#reset-text {
+  overflow: hidden;
+  animation: erase 4s steps(5, end) infinite;
+}
+
+#cursor {
+  animation: blink .75s infinite;
+}
+
+.background-container {
+  display: flex;
+  padding-top: 1em;
+  justify-content: center;
+  width: 100%;
+  height: 100%;
+  background: #999 url("images/mountain.jpg") center center / cover no-repeat;
+}
+.background h2 {
+  color: var(--tertiary-color);
+}
+
+.animation-title-wrapper {
+   width: 60%;
+   text-align: center;
+}
+
+.animation-title {
+  color: var(--text-color);
+  margin-bottom: 0;
+  font-size: 2em;
+}
+
+.animation-title::after {
+   content: "";
+   display: block;
+   width: 100%;
+   height: 3px;
+   background: var(--text-color);
+   animation: extend 10s ease-in-out 0s;
+}
+
+.animation-subtitle {
+  color: var(--theme-color);
+   margin-top: 0;
+   opacity: 0;
+   font-size: 2em;
+   animation: appear 10s forwards 1s infinite;
+}
+
+
+@keyframes slide-out {
+  from {
+    left: 0;
+  }
+  to {
+    left: -100%;
+  }
+}
+@keyframes slide {
+  0% {
+    left: 100%;
+  }
+  25% {
+    left: 0;
+  }
+  50% {
+    left: -100%;
+  }
+  75% {
+    left: -200%;
+  }
+  100% {
+    left: -300%;
+  }
+}
+
+@keyframes stretch {
+  0% {
+    width: 100%
+  }
+  50% {
+    width: 50%
+  }
+  100% {
+    width: 100%;
+  }
+}
+
+@keyframes border-appear {
+  0% {
+    border: none;
+  }
+  5% {
+    border-top: inherit;
+  }
+  20% {
+    border-right: inherit;
+  }
+  35% {
+    border-bottom: inherit;
+  }  
+  50% {
+    border-left: inherit;
+  }
+}
+
+@keyframes blink {
+  from {
+    opacity: 0;
+  }
+  to {
+    opacity: 1;
+  }
+}
+
+@keyframes erase {
+  0% {
+    width: 3em;
+  }
+  30% {
+    width: 0%;
+  }
+  60% {
+    width: 3em;
+  }
+}
+@keyframes extend {
+   0% {
+      -webkit-transform: scaleX(0);
+      transform: scaleX(0);
+   }
+   10% {
+      -webkit-transform: scaleX(1);
+      transform: scaleX(1);
+   }
+}
+
+@keyframes appear {
+   0% {
+      opacity: 0;
+   }
+   50% {
+      opacity: 1;
+   }
+   100% {
+      opacity: 1;
+      transform: rotate3d(0, 1, 0, 360deg)
+   }
+}
+

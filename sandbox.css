@@ -1,4 +1,31 @@
 /* Declare Your Styles Here */
 * {
-   
+    margin: 0;
+    padding: 0;
 }
+.shea {
+    height: 100vh;
+    background: url("https://pbs.twimg.com/profile_images/785913787819839488/xKU5eN2L.jpg") no-repeat center center / contain;
+    animation-name: appear;
+    animation-duration: 5s;
+}
+
+@keyframes appear{
+    from { 
+        opacity: 0;
+        left: -100%;
+    } to {
+        opacity: 1;
+        left: 0;
+    }
+}
+@media screen and (max-width: 300px) {
+    .shea   {
+        height: 300px;
+    }
+    h1 {
+        color: red;
+    }
+} 
+    
+
